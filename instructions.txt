@@ -1,0 +1,10 @@
+1. Crea una extension que permita al usuario borrar la cache de la pagina web que esta visitando actualmente.
+
+2. Crea un diseño minimalista para la extension.
+
+3. Quiero que uses bulma css para el diseño.
+
+4. Quiero que la extension se vea como un icono de un circulo que esta en blanco con una linea diagonal desde la parte superior derecha hasta la inferior izquierda.
+
+5. Quiero que el diseño sea responsivo.
+

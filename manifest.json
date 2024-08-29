@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "Borrar Datos de Navegación",
+    "version": "1.0",
+    "description": "Borra los inicios de sesión y el historial del dominio actual",
+    "permissions": [
+        "activeTab",
+        "browsingData",
+        "tabs",
+        "contextMenus"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "service_worker": "background.js"
+    }
+}
