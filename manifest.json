@@ -7,7 +7,9 @@
         "activeTab",
         "browsingData",
         "tabs",
-        "contextMenus"
+        "contextMenus",
+        "storage",
+        "cookies"
     ],
     "host_permissions": [
         "<all_urls>"

@@ -30,8 +30,9 @@ document.addEventListener('DOMContentLoaded', function() {
     clearDataButton.addEventListener('click', function() {
         chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
             const currentTab = tabs[0];
-            const currentUrl = new URL(currentTab.url);
-            clearBrowsingData(currentUrl);
+            chrome.runtime.getBackgroundPage((backgroundPage) => {
+                backgroundPage.clearBrowsingData(currentTab.url, currentTab.id);
+            });
         });
     });
 });
@@ -39,5 +40,8 @@ document.addEventListener('DOMContentLoaded', function() {
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.action === "showAlert") {
         alert(request.message);
+    } else if (request.action === "checkLocalStorage") {
+        sendResponse({hasData: localStorage.length > 0});
     }
+    return true;
 });
